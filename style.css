@@ -1,0 +1,27 @@
+#app {
+  width: 100%;
+  padding-top: 5%;
+}
+.searchWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.dispArea {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.output {
+  padding: 10px;
+}
+
+strong{
+  color: #f00;
+}
+
+.wordInput:has(+#search:disabled){
+  background-color: rgb(255, 186, 186);
+}

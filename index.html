@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Words To Give You Power</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="searchWrapper">
+        <input
+          class="wordInput"
+          type="text"
+          v-model="message"
+          v-on:input="toArray()"
+          style="margin-right: 10px"
+          placeholder="Enter a word"
+        />
+        <button
+          id="search"
+          v-on:click="strArrayToNumbArray()"
+          :disabled="isDisabled"
+        >
+          Search
+        </button>
+      </div>
+      <div></div>
+      <div class="wrapper">
+        <ul class="dispArea">
+          <li v-for="(value, index) in output" class="output">
+            {{value.word}}<br />
+            {{value.strs}}<br />
+            {{value.numbs}}<br />
+            "{{value.word}}" will give you
+            <strong>{{value.percent}}%</strong> of the result you want.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
